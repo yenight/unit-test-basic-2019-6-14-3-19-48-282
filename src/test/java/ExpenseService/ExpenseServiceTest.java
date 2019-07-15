@@ -50,17 +50,17 @@ class ExpenseServiceTest {
         // then
         Assertions.assertEquals(ExpenseType.OTHER_EXPENSE, expenseType);
     }
-//
-//    @Test
-//    void should_throw_unexpected_project_exception_if_project_is_invalid() {
-//        // given
-//        Project project = new Project(ProjectType.UNEXPECTED_PROJECT_TYPE, "Project D");
-//        // when
-//
-//        // then
-//        Throwable exception = Assertions.assertThrows(UnexpectedProjectTypeException.class, () -> {
-//            ExpenseService.getExpenseCodeByProjectTypeAndName(project);
-//        });
-//        Assertions.assertEquals("You enter invalid project type", exception.getMessage());
-//    }
+
+    @Test
+    void should_throw_unexpected_project_exception_if_project_is_invalid() {
+        // given
+        Project project = new Project(ProjectType.UNEXPECTED_PROJECT_TYPE, "Project D");
+        // when
+
+        // then
+        Throwable exception = Assertions.assertThrows(UnexpectedProjectTypeException.class, () -> {
+            ExpenseService.getExpenseCodeByProjectTypeAndName(project);
+        });
+        Assertions.assertEquals("You enter invalid project type", exception.getMessage());
+    }
 }
